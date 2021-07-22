@@ -1,19 +1,28 @@
-import {Link} from 'react-router-dom';
+import NextButton from './next_button';
+import StepNumber from './step_number';
 
-function Naming () {
+function RecipeName () {
     
     return (
-        <div className="vert-split-div">
-            <h3 className="span-left">Recipe Grabber</h3>
-            <Link to="/category">
-                <button className="span-left"></button>
-            </Link>
-            <h1  className="span-left">What's the name of your recipe?</h1>
-            <input type="text" className="span-left"></input>
-            
-
+        <div>
+            <div className="vert-split-div">
+                <h3 className="span-left">What is the name of your recipe?</h3>
+                <p className="span-left">Something clever like <i>Grandma's killer Cinnamon Orange Rolls</i> sounds better than just <i>Cinnamon Rolls</i>.</p>
+                <div className="span-right">
+                    <span>
+                        <StepNumber number="01" />
+                    <input type="text"></input>
+                    </span>
+                </div>
+            </div>
+            <div className="vert-split-div">
+                <div className="span-right">
+                <NextButton url="/category" text="Next" />
+                </div>
+            </div>
         </div>
+        
     )
 }
 
-export default Naming;
+export default RecipeName;
