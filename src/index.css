@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.img-vert-half {
+  max-width: 50%; 
+  height: auto;
+}
+
+.vert-split-div {
+  column-count: 2;
+}
+
+.span-left {
+  column-span: 1;
+  text-align: left; 
+
+}
+
+.span-right {
+  column-span: 1;
+  text-align: right; 
+  
+}
+
