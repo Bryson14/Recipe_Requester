@@ -1,12 +1,6 @@
 import {Link} from 'react-router-dom';
 
 function Welcome ({requester}) {
-
-    const imgCSS = {
-        'width': '200px',
-        'height': '300px',
-        'object-fit': 'cover'
-    }
     
     return (
         <div className="vert-split-div">
