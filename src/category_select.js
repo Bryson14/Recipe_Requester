@@ -1,14 +1,16 @@
-function CategorySelect(items) {
+function CategorySelect({items, onChangefunc}) {
     
-    let itemsSelect = items.items.length > 0 && 
-    items.items.map((item, i) => {
+    let itemsSelect = items.length > 0 && 
+    items.map((item, i) => {
       return (
-        <option key={i} value={item.id}>{item.name}</option>
+        <option key={i} value={item}>{item}</option>
       )
     }, this);
+
     debugger;
     return (
-        <select>
+        <select onChange={onChangefunc} className="category-select">
+            <option disabled selected value> -- select an option -- </option>
             {itemsSelect}
         </select>
     )
