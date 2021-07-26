@@ -1,11 +1,9 @@
-import NextButton from "./next_button";
-
-function Time () {
+function Time ({handleChange, time}) {
     
     return (
         <div>
             How much time will this take?
-            <NextButton url="/ingredients" text="Next" />
+            <input type="number" value={time} onChange={handleChange("totalTime")} />
         </div>
     )
 }

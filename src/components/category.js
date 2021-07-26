@@ -1,28 +1,22 @@
-import CategorySelect from "./category_select";
-import NextButton from "./next_button";
-import {useLocation} from "react-router-dom";
+function Category ({handleChange, category}) {
 
-function Category () {
-
-    const location = useLocation()
-    const data = location.state;
-
-    debugger;
-
-    let categorySelected = "";
-
-    function selectChange (e) {
-        console.log(e.target.text);
-        categorySelected = e.target.text;
-    }
+    
 
     let categories = ["Meat", "Soup", "Appetizer", "Dessert"];
+
+    let itemsSelect = categories.length > 0 && 
+    categories.map((item, i) => {
+      return (
+        <option key={i} value={item}>{item}</option>
+      )
+    }, this);
     
     return (
         <div>
-            Category
-            <CategorySelect items={categories} onChangeFunc={selectChange} />
-            <NextButton url="/subcategory" text="Next" state={categorySelected} />
+           <select onChange={handleChange("category")} value={category} className="category-select">
+            <option disabled selected value> -- select an option -- </option>
+            {itemsSelect}
+            </select>
         </div>
     )
 }

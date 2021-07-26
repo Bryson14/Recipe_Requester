@@ -1,11 +1,9 @@
-import NextButton from "./next_button";
-
-function Ingredients () {
+function Ingredients ({handleChange, ingredients}) {
     
     return (
         <div>
             Ingredients
-            <NextButton url="/instructions" text="Next" />
+            make a todo list type structure here
         </div>
     )
 }

@@ -1,11 +1,8 @@
-import NextButton from "./next_button";
-
-function Instructions () {
+function Instructions ({instructions, ingredients, handleChange}) {
     
     return (
         <div>
             Instructions
-            <NextButton url="/thankyou" text="Next" />
         </div>
     )
 }

@@ -1,17 +1,4 @@
-import NextButton from "./next_button";
-import CategorySelect from "./category_select";
-import {useLocation} from "react-router-dom";
-
-function Subcategory () {
-
-    const location = useLocation()
-    const { data } = location.state;
-
-    if (data == null) {
-        alert("Data is empty!");
-    }
-    let category = data.category;
-    debugger;
+function Subcategory ({handleChange, category, subcategory}) {
 
     let subcategories;
 
@@ -34,13 +21,20 @@ function Subcategory () {
 
     }
 
-    // todo get category from url or state?
+    let itemsSelect = subcategories.length > 0 && 
+    subcategories.map((item, i) => {
+      return (
+        <option key={i} value={item}>{item}</option>
+      )
+    }, this);
     
     return (
         <div>
-            Sub-Category
-            <CategorySelect items={subcategories} />
-            <NextButton url="/time" text="Next" />
+            <h2>Sub Category</h2>
+            <select onChange={handleChange("subcategory")} value={subcategory} className="category-select">
+            <option disabled selected value> -- select an option -- </option>
+            {itemsSelect}
+            </select>
         </div>
     )
 }
