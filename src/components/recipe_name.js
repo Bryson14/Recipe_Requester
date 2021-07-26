@@ -1,15 +1,7 @@
-import React, {useState} from 'react';
-import NextButton from './next_button';
 import StepNumber from './step_number';
 
 
-function RecipeName ({nextStep}) {
-
-    const [name, setName] = useState("")
-
-    function changeName(e) {
-        setName(e.target.value);
-    }
+function RecipeName ({handleChange, name}) {
     
     return (
         <div>
@@ -21,7 +13,7 @@ function RecipeName ({nextStep}) {
                         <StepNumber number="01" />
                     <input type="text" 
                         value={name} 
-                        onChange={changeName} 
+                        onChange={handleChange('name')} 
                         maxLength="100" 
                         placeholder="Recipe Name"></input>
                     </span>

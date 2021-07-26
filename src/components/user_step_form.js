@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Welcome from "./welcome";
 import RecipeName from "./recipe_name";
-import NextButton from './next_button';
+import ControlButton from './control_button';
 
 export class UserStepForm extends Component {
 
@@ -32,6 +32,12 @@ export class UserStepForm extends Component {
         })
     }
 
+        // Handle fields change
+    handleChange = input => e => {
+        this.setState({ [input]: e.target.value });
+        console.log(`State\n${this.state.name}`);
+    };
+
     render() {
         const {step} = this.state;
         const {name, category, subCategory, prepTime, cooktime, totalTime, ingredients, instructions, requester} =  this.state;
@@ -40,15 +46,16 @@ export class UserStepForm extends Component {
         case 1: 
         return (
             <>
-                <Welcome requester={requester}/>
-                <NextButton func={this.nextStep} text="NEXT" />
+                <Welcome requester={requester} nextStep={this.nextStep}/>
             </>
         )
         case 2: 
         return (
             <>
-                <RecipeName requester={requester}/>
-                <NextButton func={this.nextStep} text="NEXT" />
+                <RecipeName requester={requester} handleChange={this.handleChange} name={name}/>
+                <ControlButton func={this.prevStep} text="Back" />
+                <ControlButton func={this.nextStep} text="NEXT" />
+
             </>
         )
         case 3: 

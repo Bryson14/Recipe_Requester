@@ -1,8 +1,8 @@
-function NextButton ({func, text}) {
+function ControlButton ({func, text}) {
 
     return (
         <button onClick={func} className="next-button">{text}</button>
     )   
 }
 
-export default NextButton;
+export default ControlButton;
