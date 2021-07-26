@@ -1,7 +1,15 @@
+import React, {useState} from 'react';
 import NextButton from './next_button';
 import StepNumber from './step_number';
 
+
 function RecipeName () {
+
+    const [name, setName] = useState("")
+
+    function changeName(e) {
+        setName(e.target.value);
+    }
     
     return (
         <div>
@@ -11,13 +19,19 @@ function RecipeName () {
                 <div className="span-right">
                     <span>
                         <StepNumber number="01" />
-                    <input type="text"></input>
+                    <input type="text" 
+                        value={name} 
+                        onChange={changeName} 
+                        maxLength="100" 
+                        placeholder="Recipe Name"></input>
                     </span>
                 </div>
             </div>
+            <br />
             <div className="vert-split-div">
                 <div className="span-right">
-                <NextButton url="/category" text="Next" />
+                <NextButton url="/category" text="Next" 
+                dataName="recipeName" data={name}/>
                 </div>
             </div>
         </div>

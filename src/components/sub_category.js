@@ -1,15 +1,16 @@
 import NextButton from "./next_button";
-import CategorySelect from "../category_select";
+import CategorySelect from "./category_select";
 import {useLocation} from "react-router-dom";
 
-function Subcategory (category) {
+function Subcategory () {
 
     const location = useLocation()
     const { data } = location.state;
 
-    if (data != null) {
-        category = data;
+    if (data == null) {
+        alert("Data is empty!");
     }
+    let category = data.category;
     debugger;
 
     let subcategories;

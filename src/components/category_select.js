@@ -7,7 +7,6 @@ function CategorySelect({items, onChangefunc}) {
       )
     }, this);
 
-    debugger;
     return (
         <select onChange={onChangefunc} className="category-select">
             <option disabled selected value> -- select an option -- </option>

@@ -1,8 +1,9 @@
 import {Link} from 'react-router-dom';
 
-function NextButton ({text, url, state}) {
+function NextButton ({text, url, dataName, data}) {
+    debugger;
 
-    if (state == null) {
+    if (dataName == null && data == null) {
         return (
         <Link to={url}>
             <button className="next-button">{text}</button>
@@ -14,7 +15,7 @@ function NextButton ({text, url, state}) {
             <Link to={{
                 pathname: url,
                 state: {
-                  data: state,
+                  dataName: data,
                 },
               }}>
                   <button className="next-button">{text}</button>
