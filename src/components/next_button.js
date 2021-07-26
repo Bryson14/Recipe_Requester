@@ -1,27 +1,8 @@
-import {Link} from 'react-router-dom';
+function NextButton ({func, text}) {
 
-function NextButton ({text, url, dataName, data}) {
-    debugger;
-
-    if (dataName == null && data == null) {
-        return (
-        <Link to={url}>
-            <button className="next-button">{text}</button>
-        </Link>
-    )
-
-    } else {
-        return (
-            <Link to={{
-                pathname: url,
-                state: {
-                  dataName: data,
-                },
-              }}>
-                  <button className="next-button">{text}</button>
-            </Link>
-        )
-    }    
+    return (
+        <button onClick={func} className="next-button">{text}</button>
+    )   
 }
 
 export default NextButton;
