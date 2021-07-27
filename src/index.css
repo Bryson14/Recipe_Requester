@@ -37,6 +37,10 @@ code {
   background-color: blue;
 }
 
+.finish-button {
+  background-color: orange;
+}
+
 .category-select {
   height: 3rem;
   background-color: yellow;

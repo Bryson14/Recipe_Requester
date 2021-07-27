@@ -13,6 +13,7 @@ function Category ({handleChange, category}) {
     
     return (
         <div>
+          <h1 className="page-title">Category</h1>
            <select onChange={handleChange("category")} value={category} className="category-select">
             <option disabled selected value> -- select an option -- </option>
             {itemsSelect}

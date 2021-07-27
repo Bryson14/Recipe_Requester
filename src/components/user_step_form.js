@@ -42,7 +42,9 @@ export class UserStepForm extends Component {
         // Handle fields change
     handleChange = input => e => {
         this.setState({ [input]: e.target.value });
-        console.log(`State\nName:${this.state.name}\nCategory:${this.state.category}\nSubCat:${this.state.subcategory}\ntime:${this.state.totalTime}`);
+        console.log(`Name:${this.state.name}\nCategory:${this.state.category}
+        \nSubCat:${this.state.subcategory}\ntime:${this.state.totalTime}
+        \ningredients:${this.state.ingredients}\nsteps:${this.state.steps}`);
     };
 
     render() {
@@ -101,14 +103,13 @@ export class UserStepForm extends Component {
             <>
                 <Instructions  handleChange={this.handleChange} ingredients={ingredients} instructions={instructions}/>
                 <ControlButton func={this.prevStep} text="Back" />
-                <ControlButton func={this.nextStep} text="Next" />
+                <button className="finish-button" onclick={this.nextStep} >Finish</button>/>
             </>
         ) 
         case 8: 
         return (
             <>
                 <Thanks />
-                <ControlButton func={this.prevStep} text="Back" />
             </>
         )  
         default:

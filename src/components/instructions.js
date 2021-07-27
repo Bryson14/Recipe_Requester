@@ -2,7 +2,7 @@ function Instructions ({instructions, ingredients, handleChange}) {
     
     return (
         <div>
-            Instructions
+            <h1 className="page-title">Instructions</h1>
         </div>
     )
 }
