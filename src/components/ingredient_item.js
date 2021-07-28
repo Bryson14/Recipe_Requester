@@ -1,8 +1,13 @@
-function IngredientItem({value, handleChange}) {
+function IngredientItem({text, idx, removeItem}) {
 
     return (
-        <div>
-            <h3>{value}</h3>
-        </div>
+        <span className="inline">
+            <p className="ingredient-item">{text}</p>
+            <button onClick={(e) => {
+                removeItem(idx, e);
+            }}>X</button>
+        </span>
     )
 }
+
+export default IngredientItem;

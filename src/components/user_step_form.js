@@ -20,7 +20,7 @@ export class UserStepForm extends Component {
         prepTime: 0,
         cooktime: 0,
         totalTime: 0,
-        ingredients: [""],
+        ingredients: [],
         instructions: [],
         requester: "Bryson"
     }
@@ -42,10 +42,16 @@ export class UserStepForm extends Component {
         // Handle fields change
     handleChange = input => e => {
         this.setState({ [input]: e.target.value });
+
         console.log(`Name:${this.state.name}\nCategory:${this.state.category}
         \nSubCat:${this.state.subcategory}\ntime:${this.state.totalTime}
         \ningredients:${this.state.ingredients}\nsteps:${this.state.steps}`);
     };
+
+    // a more complicated state set where to logic is in ingredients.js and instructions.js
+    complexSetState = props => {
+        this.setState({ [props.key]: props.value});
+    } 
 
     render() {
         const {step} = this.state;
@@ -93,7 +99,7 @@ export class UserStepForm extends Component {
         case 6: 
         return (
             <>
-                <Ingredients  handleChange={this.handleChange} ingredients={ingredients} />
+                <Ingredients  handleChange={this.complexSetState} ingredients={ingredients} />
                 <ControlButton func={this.prevStep} text="Back" />
                 <ControlButton func={this.nextStep} text="Next" />
             </>

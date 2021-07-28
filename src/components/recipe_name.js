@@ -15,6 +15,7 @@ function RecipeName ({handleChange, name}) {
                         value={name} 
                         onChange={handleChange('name')} 
                         maxLength="100" 
+                        autoFocus
                         placeholder="Recipe Name"></input>
                     </span>
                 </div>

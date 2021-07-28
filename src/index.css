@@ -56,3 +56,7 @@ code {
   border-width: 0px;
 }
 
+.inline {
+  display: inline-block
+}
+
