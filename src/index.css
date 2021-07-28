@@ -30,7 +30,15 @@ code {
 .span-right {
   column-span: 1;
   text-align: right; 
-  
+}
+
+#leftHalf {
+  background: url('./images/roberto-valdivia-rcUw6b4iYe0-unsplash.jpg');
+  background-repeat: no-repeat;
+  width: 50%;
+  position: absolute;
+  left: 0px;
+  height: 100%;
 }
 
 .next-button {

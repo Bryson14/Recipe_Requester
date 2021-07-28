@@ -7,7 +7,7 @@ function RecipeName ({handleChange, name}) {
         <div>
             <div className="vert-split-div">
                 <h3 className="span-left">What is the name of your recipe?</h3>
-                <p className="span-left">Something clever like <i>Grandma's killer Cinnamon Orange Rolls</i> sounds better than just <i>Cinnamon Rolls</i>.</p>
+                <p className="span-left">Something clever like <b><i>Grandma's Killer Cinnamon Orange Rolls</i></b> sounds better than just <b><i>Cinnamon Rolls</i></b>.</p>
                 <div className="span-right">
                     <span>
                         <StepNumber number="01" />

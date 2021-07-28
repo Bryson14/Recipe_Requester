@@ -61,7 +61,7 @@ export class UserStepForm extends Component {
         case 2: 
         return (
             <>
-                <RecipeName requester={requester} handleChange={this.handleChange} name={name}/>
+                <RecipeName handleChange={this.handleChange} name={name}/>
                 <ControlButton func={this.prevStep} text="Back" />
                 <ControlButton func={this.nextStep} text="Next" />
             </>
@@ -103,13 +103,13 @@ export class UserStepForm extends Component {
             <>
                 <Instructions  handleChange={this.handleChange} ingredients={ingredients} instructions={instructions}/>
                 <ControlButton func={this.prevStep} text="Back" />
-                <button className="finish-button" onclick={this.nextStep} >Finish</button>/>
+                <button className="finish-button" onClick={this.nextStep} >Finish</button>/>
             </>
         ) 
         case 8: 
         return (
             <>
-                <Thanks />
+                <Thanks name={name}/>
             </>
         )  
         default:
