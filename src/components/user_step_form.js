@@ -6,9 +6,8 @@ import Subcategory from './sub_category';
 import ControlButton from './control_button';
 import Time from './time';
 import Ingredients from './ingredients';
-import instructions from './instructions';
-import Thanks from './thanks';
 import Instructions from './instructions';
+import Thanks from './thanks';
 
 export class UserStepForm extends Component {
 
@@ -21,7 +20,7 @@ export class UserStepForm extends Component {
         cooktime: 0,
         totalTime: 0,
         ingredients: [],
-        instructions: [],
+        instructions: ["cook everything well"],
         requester: "Bryson"
     }
 
@@ -105,7 +104,7 @@ export class UserStepForm extends Component {
         case 7: 
         return (
             <>
-                <Instructions  handleChange={this.handleChange} ingredients={ingredients} instructions={instructions}/>
+                <Instructions  handleChange={this.complexSetState} ingredients={ingredients} instructions={instructions}/>
                 <ControlButton func={this.prevStep} text="Back" />
                 <button className="finish-button" onClick={this.nextStep} >Finish</button>
             </>

@@ -63,3 +63,14 @@ code {
 nav ul{height:200px; width:18%;}
 nav ul{overflow:hidden; overflow-y:scroll;}
 
+
+.ingredient-list {
+  border-width: 2px;
+  border-color: red;
+}
+
+.text-wrap {
+  white-space: pre-line;
+}
+
+

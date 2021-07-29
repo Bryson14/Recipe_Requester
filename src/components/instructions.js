@@ -1,7 +1,7 @@
 import IngredientList from "./ingredient_list";
 import {useState} from "react";
 
-function Instructions ({instructions, ingredients, handleChange}) {
+function Instructions ({handleChange, ingredients, instructions}) {
 
     const [instruction, setInstruction] = useState("");
 
@@ -10,7 +10,6 @@ function Instructions ({instructions, ingredients, handleChange}) {
     };
 
     function addInstruction(e) {
-        debugger;
         let newInstructions = [instruction].concat(instructions);
         setInstruction("");
         handleChange({key: 'instructions', value: newInstructions});
@@ -39,7 +38,7 @@ function Instructions ({instructions, ingredients, handleChange}) {
 
             <ol>
                 {instructions.map((instruc, idx) => 
-                    <li key={instruc.key}>{instruc}</li>)}
+                    <li className='text-wrap' key={instruc.key}>{instruc}</li>)}
             </ol>
         </div>
     )
