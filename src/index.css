@@ -60,3 +60,6 @@ code {
   display: inline-block
 }
 
+nav ul{height:200px; width:18%;}
+nav ul{overflow:hidden; overflow-y:scroll;}
+

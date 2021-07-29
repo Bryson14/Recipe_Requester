@@ -45,7 +45,7 @@ export class UserStepForm extends Component {
 
         console.log(`Name:${this.state.name}\nCategory:${this.state.category}
         \nSubCat:${this.state.subcategory}\ntime:${this.state.totalTime}
-        \ningredients:${this.state.ingredients}\nsteps:${this.state.steps}`);
+        \ningredients:${this.state.ingredients}\nsteps:${this.state.steps}\nInstructions:${this.state.instructions}`);
     };
 
     // a more complicated state set where to logic is in ingredients.js and instructions.js
@@ -67,7 +67,7 @@ export class UserStepForm extends Component {
         case 2: 
         return (
             <>
-                <RecipeName handleChange={this.handleChange} name={name}/>
+                <RecipeName handleChange={this.handleChange} name={name} nextStep={this.nextStep}/>
                 <ControlButton func={this.prevStep} text="Back" />
                 <ControlButton func={this.nextStep} text="Next" />
             </>
@@ -91,7 +91,7 @@ export class UserStepForm extends Component {
         case 5: 
         return (
             <>
-                <Time  handleChange={this.handleChange} time={totalTime}/>
+                <Time  handleChange={this.handleChange} time={totalTime} nextStep={this.nextStep}/>
                 <ControlButton func={this.prevStep} text="Back" />
                 <ControlButton func={this.nextStep} text="Next" />
             </>
@@ -99,9 +99,7 @@ export class UserStepForm extends Component {
         case 6: 
         return (
             <>
-                <Ingredients  handleChange={this.complexSetState} ingredients={ingredients} />
-                <ControlButton func={this.prevStep} text="Back" />
-                <ControlButton func={this.nextStep} text="Next" />
+                <Ingredients  handleChange={this.complexSetState} ingredients={ingredients} nextStep={this.nextStep} prevStep={this.prevStep}/>
             </>
         ) 
         case 7: 
@@ -109,7 +107,7 @@ export class UserStepForm extends Component {
             <>
                 <Instructions  handleChange={this.handleChange} ingredients={ingredients} instructions={instructions}/>
                 <ControlButton func={this.prevStep} text="Back" />
-                <button className="finish-button" onClick={this.nextStep} >Finish</button>/>
+                <button className="finish-button" onClick={this.nextStep} >Finish</button>
             </>
         ) 
         case 8: 

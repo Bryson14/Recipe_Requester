@@ -1,13 +1,19 @@
 import {useState} from "react";
 import IngredientItem from './ingredient_item'
+import ControlButton from "./control_button";
 
-function Ingredients ({handleChange, ingredients}) {
+function Ingredients ({handleChange, ingredients, nextStep, prevStep}) {
 
     const [ingredient, setIngredient] = useState("");
 
+    function enterKey(e) {
+        if (e.key === 'Enter') {
+            addIngredient(e);
+        }
+    }
+
     function onValueChange(e) {
         setIngredient(e.target.value);
-        console.log(ingredient);
     };
 
     function addIngredient(e) {
@@ -15,12 +21,12 @@ function Ingredients ({handleChange, ingredients}) {
         setIngredient("");
         handleChange({key: 'ingredients', value: newIngredients});
         document.getElementById("ingredient-input").focus();
-    }
+    };
 
     function removeItem(idx, e) {
         ingredients.splice(idx, 1);
         handleChange({key: 'ingredients', value: ingredients});
-    }
+    };
     
     return (
         <div>
@@ -32,9 +38,11 @@ function Ingredients ({handleChange, ingredients}) {
                 onChange={onValueChange}
                 autoFocus
                 placeholder='Type an Ingredient'
-                onKeyDown={e => e.key === 'Enter' && addIngredient}
+                onKeyDown={enterKey}
             />
             <button onClick={addIngredient}>Add Ingredient</button>
+            <ControlButton func={prevStep} text="Back" />
+            <ControlButton func={nextStep} text="Next" />
             <hr />
             <ol>
                 {ingredients.map((ingre, idx) => 

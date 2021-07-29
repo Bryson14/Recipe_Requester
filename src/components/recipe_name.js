@@ -1,7 +1,13 @@
 import StepNumber from './step_number';
 
 
-function RecipeName ({handleChange, name}) {
+function RecipeName ({handleChange, name, nextStep}) {
+
+    function enterKey(e) {
+        if (e.key === 'Enter') {
+            nextStep();
+        }
+    }
     
     return (
         <div>
@@ -15,6 +21,7 @@ function RecipeName ({handleChange, name}) {
                         value={name} 
                         onChange={handleChange('name')} 
                         maxLength="100" 
+                        onKeyDown={enterKey}
                         autoFocus
                         placeholder="Recipe Name"></input>
                     </span>
