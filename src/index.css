@@ -52,7 +52,8 @@ code {
 }
 
 .next-button {
-  background-color: blue;
+  background-color: #2589BD;
+  font-size: 20px;
 }
 
 .finish-button {
@@ -61,7 +62,7 @@ code {
 
 .category-select {
   height: 3rem;
-  background-color: yellow;
+  background-color: #F1DB4B;
   border-radius: 2px;
   border-width: 0px;
 }
