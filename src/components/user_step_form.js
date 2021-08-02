@@ -20,7 +20,7 @@ export class UserStepForm extends Component {
         cooktime: 0,
         totalTime: 0,
         ingredients: [],
-        instructions: ["cook everything well"],
+        instructions: [],
         requester: "Bryson"
     }
 

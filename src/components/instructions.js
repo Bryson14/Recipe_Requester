@@ -32,7 +32,7 @@ function Instructions ({handleChange, ingredients, instructions}) {
             value={instruction} 
             rows='6'
             cols='70'
-            placeholder='Click on ingredients and type what do do with them!'/>
+            placeholder='Type out instructions and click button to add the steps!'/>
 
             <button onClick={addInstruction}>Add this instruction!</button>
 

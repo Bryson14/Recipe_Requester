@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to bottom right, red, yellow);
+  background-image: linear-gradient(to bottom right, #44BB88, #E3F2FD);
 }
 
 code {
@@ -18,6 +18,8 @@ code {
   background-color: white;
   border-radius: 3rem;
   padding: 2rem;
+  background-position-y: -1px;
+  bottom: -1px;
 }
 
 .img-vert-half {
