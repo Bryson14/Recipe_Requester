@@ -17,7 +17,7 @@ export class UserStepForm extends Component {
         category: "",
         subCategory: "",
         prepTime: 0,
-        cooktime: 0,
+        cookTime: 0,
         totalTime: 0,
         ingredients: [],
         instructions: [],
@@ -54,7 +54,7 @@ export class UserStepForm extends Component {
 
     render() {
         const {step} = this.state;
-        const {name, category, subCategory, prepTime, cooktime, totalTime, ingredients, instructions, requester} =  this.state;
+        const {name, category, subCategory, prepTime, cookTime, totalTime, ingredients, instructions, requester} =  this.state;
 
         switch(step) {
         case 1: 
@@ -90,7 +90,7 @@ export class UserStepForm extends Component {
         case 5: 
         return (
             <>
-                <Time  handleChange={this.handleChange} time={totalTime} nextStep={this.nextStep}/>
+                <Time  handleChange={this.handleChange} time={totalTime} prepTime={prepTime} cookTime={cookTime} nextStep={this.nextStep}/>
                 <ControlButton func={this.prevStep} text="Back" />
                 <ControlButton func={this.nextStep} text="Next" />
             </>

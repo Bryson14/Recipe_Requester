@@ -54,6 +54,8 @@ code {
 .next-button {
   background-color: #2589BD;
   font-size: 20px;
+  border-radius: 4px;
+  margin: 1.5rem;
 }
 
 .finish-button {
