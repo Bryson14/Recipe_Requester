@@ -17,6 +17,9 @@ function Ingredients ({handleChange, ingredients, nextStep, prevStep}) {
     };
 
     function addIngredient(e) {
+        if (ingredient === "") {
+            return;
+        }
         let newIngredients = [ingredient].concat(ingredients);
         setIngredient("");
         handleChange({key: 'ingredients', value: newIngredients});

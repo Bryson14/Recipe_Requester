@@ -12,6 +12,9 @@ function Instructions ({handleChange, ingredients, instructions}) {
     };
 
     function addInstruction(e) {
+        if (instruction === "") {
+            return;
+        }
         let newInstructions = [instruction].concat(instructions);
         setInstruction("");
         handleChange({key: 'instructions', value: newInstructions});
