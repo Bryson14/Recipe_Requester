@@ -6,7 +6,7 @@ function IngredientList({ingredients}) {
                 <h3>Ingredients</h3>      
                 <ul>                
                     {ingredients.map((ingre, idx) => 
-                        <li key={ingre.key}>{ingre}</li>)}
+                        <li key={idx}>{ingre}</li>)}
                 </ul>
             </nav>
         </div>

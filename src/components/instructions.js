@@ -1,5 +1,7 @@
 import IngredientList from "./ingredient_list";
 import {useState} from "react";
+var Airtable = require('airtable');
+var base = new Airtable({apiKey: process.env.REACT_APP_API_KEY}).base('app3Gf3GAi6tb6C0t');
 
 function Instructions ({handleChange, ingredients, instructions}) {
 
@@ -32,6 +34,7 @@ function Instructions ({handleChange, ingredients, instructions}) {
             value={instruction} 
             rows='6'
             cols='70'
+            maxLength="500"
             placeholder='Type out instructions and click button to add the steps!'/>
 
             <button onClick={addInstruction}>Add this instruction!</button>

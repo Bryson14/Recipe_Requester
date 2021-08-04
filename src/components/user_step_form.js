@@ -8,6 +8,8 @@ import Time from './time';
 import Ingredients from './ingredients';
 import Instructions from './instructions';
 import Thanks from './thanks';
+var Airtable = require('airtable');
+var base = new Airtable({apiKey: process.env.REACT_APP_API_KEY}).base('app3Gf3GAi6tb6C0t');
 
 export class UserStepForm extends Component {
 
@@ -43,7 +45,7 @@ export class UserStepForm extends Component {
         this.setState({ [input]: e.target.value });
 
         console.log(`Name:${this.state.name}\nCategory:${this.state.category}
-        \nSubCat:${this.state.subcategory}\ntime:${this.state.totalTime}
+        \nSubCat:${this.state.subCategory}\ntime:${this.state.totalTime}
         \ningredients:${this.state.ingredients}\nsteps:${this.state.steps}\nInstructions:${this.state.instructions}`);
     };
 
@@ -51,6 +53,35 @@ export class UserStepForm extends Component {
     complexSetState = props => {
         this.setState({ [props.key]: props.value});
     } 
+
+    createRecord = async () => {
+        let self = this;
+        base('Recipes').create([
+            {
+                "fields": {
+                  "Name": this.state.name,
+                  "Category": this.state.category,
+                  "Subcategory": this.state.subCategory,
+                  "totalTime": Number(this.state.totalTime),
+                  "prepTime": Number(this.state.prepTime),
+                  "cookTime": Number(this.state.cookTime),
+                  "Ingredients": JSON.stringify(this.state.ingredients),
+                  "Instructions": JSON.stringify(this.state.instructions)
+                }
+              }
+          ], function(err, records) {
+            if (err) {
+              console.error(err);
+              alert("There was a problem submitting the data to Airtable.")
+              return;
+            } else {
+                records.forEach(function (record) {
+                    console.log(record.getId());
+                  });
+                self.nextStep();
+            }
+          });
+    };
 
     render() {
         const {step} = this.state;
@@ -90,7 +121,7 @@ export class UserStepForm extends Component {
         case 5: 
         return (
             <>
-                <Time  handleChange={this.handleChange} time={totalTime} prepTime={prepTime} cookTime={cookTime} nextStep={this.nextStep}/>
+                <Time  handleChange={this.handleChange} time={totalTime} prepTime={prepTime} cookTime={cookTime} nextStep={this.nextStep} name={name}/>
                 <ControlButton func={this.prevStep} text="Back" />
                 <ControlButton func={this.nextStep} text="Next" />
             </>
@@ -106,7 +137,7 @@ export class UserStepForm extends Component {
             <>
                 <Instructions  handleChange={this.complexSetState} ingredients={ingredients} instructions={instructions}/>
                 <ControlButton func={this.prevStep} text="Back" />
-                <button className="finish-button" onClick={this.nextStep} >Finish</button>
+                <button className="finish-button" onClick={this.createRecord} >Finish</button>
             </>
         ) 
         case 8: 

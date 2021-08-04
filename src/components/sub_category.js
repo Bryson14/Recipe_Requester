@@ -32,8 +32,8 @@ function Subcategory ({handleChange, category, subcategory}) {
         <div>
             <h1 className="page-title">Sub Category</h1>
             <select onChange={handleChange("subCategory")} value={subcategory} className="category-select">
-            <option disabled selected value> -- select an option -- </option>
-            {itemsSelect}
+                <option disabled selected value="notselected"> -- select an option -- </option>
+                {itemsSelect}
             </select>
         </div>
     )
