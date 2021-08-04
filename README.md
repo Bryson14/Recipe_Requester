@@ -1,3 +1,6 @@
+# Project Statically Hosted on Github Pages
+Go to [the project here](https://bryson14.github.io/Recipe_Requester/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
