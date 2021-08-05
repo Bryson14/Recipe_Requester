@@ -28,25 +28,42 @@ function Instructions ({handleChange, ingredients, instructions}) {
     
     return (
         
-        <div>
+        <div className="container">
             <h1 className="page-title">Instructions</h1>
-            <IngredientList ingredients={ingredients} />
-            <textarea 
-            id='instruction-input'
-            className="form-control"
-            onChange={onValueChange}
-            value={instruction} 
-            rows='6'
-            cols='70'
-            maxLength="500"
-            placeholder='Type out instructions and click "Add Instruction" for each step...'/>
+            <div className="row">
+                <div className='col-sm-12 col-md-8'>
+                    <textarea 
+                    id='instruction-input'
+                    className="form-control"
+                    onChange={onValueChange}
+                    value={instruction} 
+                    rows='6'
+                    cols='70'
+                    maxLength="500"
+                    placeholder='Type out instructions and click "Add Instruction" for each step...'/>
+                </div>
+                <div className='col-sm-12 col-md-4'>
+                <IngredientList ingredients={ingredients} />
+                </div>
+            </div>
+            
+        
+            <button className="btn btn-secondary btn-spacer" onClick={addInstruction}>Add Instruction</button>
 
-            <button className="btn btn-secondary" onClick={addInstruction}>Add Instruction</button>
-
-            <ol>
-                {instructions.map((instruc, idx) => 
-                    <li className='text-wrap' key={instruc.key}>{instruc}</li>)}
-            </ol>
+            
+            <div className='container'>
+                <div className='row'>
+                    <div className='col'>
+                    <p className="h4">My Instructions</p>
+                    <hr />
+                        <ol>
+                            {instructions.map((instruc, idx) => 
+                                <li className='form-control text-wrap' id="text-wrap" key={instruc.key}>{instruc}</li>)}
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     )
 }

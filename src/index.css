@@ -78,6 +78,10 @@ nav ul{overflow:hidden; overflow-y:scroll;}
   white-space: pre-line;
 }
 
+#text-wrap {
+  white-space: pre-line;
+}
+
 .modal {
   position: fixed;
   left: 0;
@@ -116,3 +120,11 @@ nav ul{overflow:hidden; overflow-y:scroll;}
   margin-right: 3rem;
   margin-left: 3rem;
 }
+
+.list-group{
+  max-height: 300px;
+  margin-bottom: 10px;
+  overflow:scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
