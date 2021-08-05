@@ -14,10 +14,15 @@ function Category ({handleChange, category}) {
     return (
         <div>
           <h1 className="page-title">Category</h1>
-           <select onChange={handleChange("category")} value={category} className="category-select">
-              <option disabled selected value="notselected"> -- select an option -- </option>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Options</label>
+            </div>
+            <select onChange={handleChange("category")} value={category} class="custom-select" id="inputGroupSelect01">
+              <option selected>Choose...</option>
               {itemsSelect}
             </select>
+          </div>
         </div>
     )
 }

@@ -31,10 +31,15 @@ function Subcategory ({handleChange, category, subcategory}) {
     return (
         <div>
             <h1 className="page-title">Sub Category</h1>
-            <select onChange={handleChange("subCategory")} value={subcategory} className="category-select">
-                <option disabled selected value="notselected"> -- select an option -- </option>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label  class="input-group-text" for="inputGroupSelect01">Options</label>
+            </div>
+            <select onChange={handleChange("subCategory")} value={subcategory} class="custom-select" id="inputGroupSelect01">
+                <option selected>Choose...</option>
                 {itemsSelect}
             </select>
+            </div>
         </div>
     )
 }

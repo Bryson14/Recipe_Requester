@@ -33,14 +33,15 @@ function Instructions ({handleChange, ingredients, instructions}) {
             <IngredientList ingredients={ingredients} />
             <textarea 
             id='instruction-input'
+            className="form-control"
             onChange={onValueChange}
             value={instruction} 
             rows='6'
             cols='70'
             maxLength="500"
-            placeholder='Type out instructions and click button to add the steps!'/>
+            placeholder='Type out instructions and click "Add Instruction" for each step...'/>
 
-            <button onClick={addInstruction}>Add this instruction!</button>
+            <button className="btn btn-secondary" onClick={addInstruction}>Add Instruction</button>
 
             <ol>
                 {instructions.map((instruc, idx) => 

@@ -1,7 +1,7 @@
 function ControlButton ({func, text}) {
 
     return (
-        <button onClick={func} className="next-button btn btn-primary">{text}</button>
+        <button onClick={func} className="btn-spacer btn btn-primary">{text}</button>
     )   
 }
 

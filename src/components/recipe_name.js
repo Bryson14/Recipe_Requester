@@ -18,6 +18,7 @@ function RecipeName ({handleChange, name, nextStep}) {
                     <span>
                         <StepNumber number="01" />
                     <input type="text" 
+                        className="form-control"
                         value={name} 
                         onChange={handleChange('name')} 
                         maxLength="100" 

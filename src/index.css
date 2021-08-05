@@ -51,15 +51,8 @@ code {
   height: 100%;
 }
 
-.next-button {
-  background-color: #2589BD;
-  font-size: 20px;
-  border-radius: 4px;
-  margin: 1.5rem;
-}
-
-.finish-button {
-  background-color: orange;
+.btn-spacer {
+  margin: 1rem 2rem 1rem 2rem;
 }
 
 .category-select {

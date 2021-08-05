@@ -35,8 +35,17 @@ function Ingredients ({handleChange, ingredients, nextStep, prevStep}) {
         <div>
             <h1 className="page-title">Ingredients</h1>
             <p>Add the amount of the ingredient as well. For example, say "3 cups of unbleached flour"</p>
-            <input 
+            
+            <ControlButton func={prevStep} text="Back" />
+            <ControlButton func={nextStep} text="Next" />
+            <hr />
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="input-group-text btn btn-success" onClick={addIngredient} id="basic-addon1">Add Ingredient</button>
+                </div>
+                <input 
                 type="text"
+                className="form-control"
                 id="ingredient-input"
                 value={ingredient}
                 onChange={onValueChange}
@@ -44,10 +53,8 @@ function Ingredients ({handleChange, ingredients, nextStep, prevStep}) {
                 placeholder='Type an Ingredient'
                 onKeyDown={enterKey}
             />
-            <button onClick={addIngredient} className='btn btn-success'>Add Ingredient</button>
-            <ControlButton func={prevStep} text="Back" />
-            <ControlButton func={nextStep} text="Next" />
-            <hr />
+            </div>
+
             <ol>
                 {ingredients.map((ingre, idx) => 
                     <li key={ingre.key}><IngredientItem text={ingre} idx={idx} removeItem={removeItem}/></li>)}
@@ -57,3 +64,4 @@ function Ingredients ({handleChange, ingredients, nextStep, prevStep}) {
 }
 
 export default Ingredients;
+

@@ -138,7 +138,7 @@ export class UserStepForm extends Component {
             <>
                 <Instructions  handleChange={this.complexSetState} ingredients={ingredients} instructions={instructions}/>
                 <ControlButton func={this.prevStep} text="Back" />
-                <button className="finish-button btn btn-success" onClick={this.nextStep} >Finish</button>
+                <button className="btn btn-success" onClick={this.nextStep} >Finish</button>
             </>
         ) 
         case 8: 
