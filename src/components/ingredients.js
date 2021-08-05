@@ -34,6 +34,7 @@ function Ingredients ({handleChange, ingredients, nextStep, prevStep}) {
     return (
         <div>
             <h1 className="page-title">Ingredients</h1>
+            <p>Add the amount of the ingredient as well. For example, say "3 cups of unbleached flour"</p>
             <input 
                 type="text"
                 id="ingredient-input"
@@ -43,7 +44,7 @@ function Ingredients ({handleChange, ingredients, nextStep, prevStep}) {
                 placeholder='Type an Ingredient'
                 onKeyDown={enterKey}
             />
-            <button onClick={addIngredient}>Add Ingredient</button>
+            <button onClick={addIngredient} className='btn btn-success'>Add Ingredient</button>
             <ControlButton func={prevStep} text="Back" />
             <ControlButton func={nextStep} text="Next" />
             <hr />

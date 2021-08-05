@@ -7,6 +7,7 @@ import ControlButton from './control_button';
 import Time from './time';
 import Ingredients from './ingredients';
 import Instructions from './instructions';
+import ModalConfim from './modal_confirm';
 import Thanks from './thanks';
 var Airtable = require('airtable');
 var base = new Airtable({apiKey: process.env.REACT_APP_API_KEY}).base('app3Gf3GAi6tb6C0t');
@@ -137,10 +138,17 @@ export class UserStepForm extends Component {
             <>
                 <Instructions  handleChange={this.complexSetState} ingredients={ingredients} instructions={instructions}/>
                 <ControlButton func={this.prevStep} text="Back" />
-                <button className="finish-button" onClick={this.createRecord} >Finish</button>
+                <button className="finish-button btn btn-success" onClick={this.nextStep} >Finish</button>
             </>
         ) 
         case 8: 
+        return (
+            <>
+                <Instructions  handleChange={this.complexSetState} ingredients={ingredients} instructions={instructions}/>
+                <ModalConfim prevStep={this.prevStep} submit_record={this.createRecord} />
+            </>
+        )
+        case 9: 
         return (
             <>
                 <Thanks name={name}/>
