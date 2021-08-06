@@ -19,9 +19,9 @@ export class UserStepForm extends Component {
         name: "",
         category: "",
         subCategory: "",
-        prepTime: 0,
-        cookTime: 0,
-        totalTime: 0,
+        prepTime: "",
+        cookTime: "",
+        totalTime: "",
         ingredients: [],
         instructions: [],
         requester: "Bryson"
