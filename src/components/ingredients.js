@@ -41,7 +41,7 @@ function Ingredients ({handleChange, ingredients, nextStep, prevStep}) {
             <hr />
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <button class="input-group-text btn btn-success" onClick={addIngredient} id="basic-addon1">Add Ingredient</button>
+                    <button class="input-group-text btn btn-success m-2" onClick={addIngredient} id="basic-addon1">Add Ingredient</button>
                 </div>
                 <input 
                 type="text"
@@ -55,10 +55,16 @@ function Ingredients ({handleChange, ingredients, nextStep, prevStep}) {
             />
             </div>
 
-            <ol>
-                {ingredients.map((ingre, idx) => 
-                    <li key={ingre.key}><IngredientItem text={ingre} idx={idx} removeItem={removeItem}/></li>)}
-            </ol>
+            {
+                ingredients.length > 0 ?
+                <ol>
+                    {ingredients.map((ingre, idx) => 
+                        <li key={ingre.key}><IngredientItem text={ingre} idx={idx} removeItem={removeItem}/></li>)}
+                </ol>
+                :
+                <p>You have no ingredients. Add some!</p>
+            }
+            
         </div>
     )
 }
