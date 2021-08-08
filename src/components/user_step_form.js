@@ -14,6 +14,13 @@ var base = new Airtable({apiKey: process.env.REACT_APP_API_KEY}).base('app3Gf3GA
 
 export class UserStepForm extends Component {
 
+    componentDidMount() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('requester')) {
+            this.setState({ "requester": params.get('requester') });
+        } 
+      }
+    
     state = {
         step: 1,
         name: "",
