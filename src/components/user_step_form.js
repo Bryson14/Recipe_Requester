@@ -158,7 +158,8 @@ export class UserStepForm extends Component {
         case 9: 
         return (
             <>
-                <Thanks state={this.state}/>
+                <Thanks name={name} category={category} subcategory={subCategory} totaltime={totalTime} 
+            preptime={prepTime} cooktime={cookTime} ingredients={ingredients} instructions={instructions}/>
             </>
         )  
         default:

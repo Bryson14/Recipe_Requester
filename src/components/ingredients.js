@@ -38,6 +38,10 @@ function Ingredients ({handleChange, ingredients, nextStep, prevStep}) {
             
             <ControlButton func={prevStep} text="Back" />
             <ControlButton func={nextStep} text="Next" />
+            <div>
+            <small>Pressing <kbd>Enter</kbd> will auto add your ingredient!</small>
+            </div>
+            
             <hr />
             <div class="input-group mb-3">
                 <div class="input-group-prepend">

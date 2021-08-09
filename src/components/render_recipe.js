@@ -1,14 +1,6 @@
-const RenderRecipe = ({state}) => {
+const RenderRecipe = ({name, category, subcategory, totaltime, preptime, cooktime, ingredients, instructions}) => {
 
     debugger;
-    let name = state.name;
-    let category = state.category;
-    let subCategory = state.SubCategory;
-    let totalTime = state.totalTime;
-    let prepTime = state.prepTime;
-    let cookTime = state.cookTime;
-    let ingredients = state.ingredients;
-    let instructions = state.instructions;
 
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
@@ -19,27 +11,32 @@ const RenderRecipe = ({state}) => {
 
     return (
 
-        <div>
-            <h2>{name}</h2>
-            <p>Category: <b>{category}</b></p>
-            <p>Subcategory: <b>{subCategory}</b></p>
-            <p>Time: <b>{totalTime}</b></p>
-            <p>Prep Time: <b>{prepTime}</b></p>
-            <p>Cook Time: <b>{cookTime}</b></p>
+        <div className="container">
+            <div className="row">
+            <h2 className='header-2'>{name}</h2>
+                <div className="col-lg-6 col-md-12">
+                    <p>Category: <b>{category}</b> -- Subcategory: <b>{subcategory}</b></p>
+                    <p>Time: <b>{totaltime} min.</b></p>
+                    <p>Prep Time: <b>{preptime} min.</b></p>
+                    <p>Cook Time: <b>{cooktime} min.</b></p>
+                </div>
+                <div className="col-lg-6 col-md-12">
+                    <h4>Ingredients</h4>
+                        <ol>
+                            {ingredients.map((ingre, idx) => 
+                                <li key={idx}>{ingre}</li>)}
+                        </ol>
 
-            <h3>Ingredients</h3>
-            <ol>
-                {ingredients.map((ingre, idx) => 
-                    <li key={idx}>{ingre}</li>)}
-            </ol>
-
-            <h3>Instructions</h3>
-            <ol>
-                {instructions.map((instruc, idx) => 
-                    <li key={idx}>{instruc}</li>)}
-            </ol>
-
-            <p>Thank you for you recipe! Created {today}</p>
+                    <h4>Instructions</h4>
+                        <ol>
+                            {instructions.map((instruc, idx) => 
+                                <li key={idx}>{instruc}</li>)}
+                        </ol>
+                </div>
+            </div>
+            
+            <hr className='my-4'/>
+            <p className='lead'>Thank you for you recipe! Created {today}</p>
         </div>
     )
 }
