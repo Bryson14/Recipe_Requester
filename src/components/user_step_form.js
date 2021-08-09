@@ -158,7 +158,7 @@ export class UserStepForm extends Component {
         case 9: 
         return (
             <>
-                <Thanks name={name}/>
+                <Thanks state={this.state}/>
             </>
         )  
         default:
