@@ -10,6 +10,12 @@ function Instructions ({handleChange, ingredients, instructions}) {
         setInstruction(e.target.value);
     };
 
+    function enterKey(e) {
+        if (e.key === 'Enter') {
+            addInstruction(e);
+        }
+    }
+
     function addInstruction(e) {
         if (instruction === "") {
             return;
@@ -41,6 +47,7 @@ function Instructions ({handleChange, ingredients, instructions}) {
                         onChange={onValueChange}
                         value={instruction} 
                         maxLength="500"
+                        onKeyDown={enterKey}
                         placeholder='Type out instructions and click "Add Instruction" for each step...'/>
                     </div>
                     <div className='container row text-center '>

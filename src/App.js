@@ -1,11 +1,23 @@
 import React from "react";
-import UserStepform from "./components/user_step_form"
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import UserStepform from "./components/user_step_form";
+import RecipeView from "./components/recipe_view";
 
 export default function App() {
   return (
-    <div  className="user-form">
-       <UserStepform /> 
-    </div>
+    <Router>
+      <Switch>
+        <Route path='/recipes'>
+          <RecipeView />
+        </Route>
+        <Route exact path="/">
+          <div  className="user-form">
+            <UserStepform /> 
+          </div>
+        </Route>
+      </Switch>
+    </Router>
+    
     
   );
 }

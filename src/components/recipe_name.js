@@ -29,11 +29,7 @@ function RecipeName ({handleChange, name, nextStep}) {
                 </div>
             </div>
             <br />
-            <div className="vert-split-div">
-                <div className="span-right">
-                
-                </div>
-            </div>
+            
         </div>
         
     )
