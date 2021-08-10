@@ -1,12 +1,7 @@
-import RenderRecipe from "./render_recipe"
+import RenderRecipe from "./render_recipe";
 
 const RecipeView = () => {
-
-    return (
-        <div>
-            Hey
-        </div>
-    )
-}
+  return <div>Hey</div>;
+};
 
 export default RecipeView;
