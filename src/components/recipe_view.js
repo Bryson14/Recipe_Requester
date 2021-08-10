@@ -17,7 +17,6 @@ base("Recipes")
       records.forEach(function (record) {
         record.fields.Ingredients = JSON.parse(record.fields.Ingredients);
         record.fields.Instructions = JSON.parse(record.fields.Instructions);
-        debugger;
         myrecipes.push(record.fields);
       });
 
@@ -39,7 +38,8 @@ debugger;
 const RecipeView = () => {
   return (
     <div className="container">
-      <p className="heading-1">Recipe Book</p>
+      <h1 className="m-3">Recipe Book</h1>
+      <hr />
       {myrecipes.map((recipe) => (
         <RenderRecipe
           name={recipe.Name}

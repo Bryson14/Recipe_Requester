@@ -1,4 +1,5 @@
 import RenderRecipe from "./render_recipe";
+import { useHistory } from "react-router-dom";
 
 function Thanks({
   name,
@@ -10,6 +11,12 @@ function Thanks({
   ingredients,
   instructions,
 }) {
+  let history = useHistory();
+
+  function goToRecipes(e) {
+    history.push("/recipes");
+  }
+
   return (
     <div className="container">
       <div className="jumbotron">
@@ -21,6 +28,10 @@ function Thanks({
           </b>{" "}
           alive.
         </p>
+        <p>Click here to see other recipes</p>
+        <button className="btn btn-secondary" onClick={goToRecipes}>
+          See Recipe Book!
+        </button>
         <hr className="my-4" />
       </div>
       <RenderRecipe

@@ -18,7 +18,7 @@ const RenderRecipe = ({
   today = mm + "/" + dd + "/" + yyyy;
 
   return (
-    <div className="container">
+    <div className="container my-4">
       <div className="row">
         <h2 className="header-2">{name}</h2>
         <div className="col-lg-6 col-md-12">
