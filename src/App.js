@@ -10,7 +10,12 @@ export default function App() {
         <Route path="/recipes">
           <RecipeView />
         </Route>
-        <Route exact path={["/", "Recipe_Requester"]}>
+        <Route exact path="/">
+          <div className="user-form">
+            <UserStepform />
+          </div>
+        </Route>
+        <Route path={"/Recipe_Requester" | "/home"}>
           <div className="user-form">
             <UserStepform />
           </div>
