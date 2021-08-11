@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 function Thanks({
   name,
   category,
-  subcategory,
   totaltime,
   preptime,
   cooktime,
@@ -37,7 +36,6 @@ function Thanks({
       <RenderRecipe
         name={name}
         category={category}
-        subcategory={subcategory}
         totaltime={totaltime}
         preptime={preptime}
         cooktime={cooktime}

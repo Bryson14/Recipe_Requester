@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Welcome from "./welcome";
 import RecipeName from "./recipe_name";
 import Category from "./category";
-import Subcategory from "./sub_category";
 import ControlButton from "./control_button";
 import Time from "./time";
 import Ingredients from "./ingredients";
@@ -26,7 +25,6 @@ export class UserStepForm extends Component {
     step: 1,
     name: "",
     category: "",
-    subCategory: "",
     prepTime: "",
     cookTime: "",
     totalTime: "",
@@ -52,10 +50,6 @@ export class UserStepForm extends Component {
   // Handle fields change
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
-
-    console.log(`Name:${this.state.name}\nCategory:${this.state.category}
-        \nSubCat:${this.state.subCategory}\ntime:${this.state.totalTime}
-        \ningredients:${this.state.ingredients}\nsteps:${this.state.steps}\nInstructions:${this.state.instructions}`);
   };
 
   // a more complicated state set where to logic is in ingredients.js and instructions.js
@@ -71,7 +65,6 @@ export class UserStepForm extends Component {
           fields: {
             Name: this.state.name,
             Category: this.state.category,
-            Subcategory: this.state.subCategory,
             totalTime: Number(this.state.totalTime),
             prepTime: Number(this.state.prepTime),
             cookTime: Number(this.state.cookTime),
@@ -100,7 +93,6 @@ export class UserStepForm extends Component {
     const {
       name,
       category,
-      subCategory,
       prepTime,
       cookTime,
       totalTime,
@@ -139,19 +131,6 @@ export class UserStepForm extends Component {
       case 4:
         return (
           <>
-            <Subcategory
-              handleChange={this.handleChange}
-              subcategory={subCategory}
-              category={category}
-              s
-            />
-            <ControlButton func={this.prevStep} text="Back" />
-            <ControlButton func={this.nextStep} text="Next" />
-          </>
-        );
-      case 5:
-        return (
-          <>
             <Time
               handleChange={this.handleChange}
               time={totalTime}
@@ -164,7 +143,7 @@ export class UserStepForm extends Component {
             <ControlButton func={this.nextStep} text="Next" />
           </>
         );
-      case 6:
+      case 5:
         return (
           <>
             <Ingredients
@@ -175,7 +154,7 @@ export class UserStepForm extends Component {
             />
           </>
         );
-      case 7:
+      case 6:
         return (
           <>
             <Instructions
@@ -189,7 +168,7 @@ export class UserStepForm extends Component {
             </button>
           </>
         );
-      case 8:
+      case 7:
         return (
           <>
             <Instructions
@@ -203,13 +182,12 @@ export class UserStepForm extends Component {
             />
           </>
         );
-      case 9:
+      case 8:
         return (
           <>
             <Thanks
               name={name}
               category={category}
-              subcategory={subCategory}
               totaltime={totalTime}
               preptime={prepTime}
               cooktime={cookTime}

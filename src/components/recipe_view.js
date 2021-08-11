@@ -1,5 +1,4 @@
 import RenderRecipe from "./render_recipe";
-import React, { useState, useEffect } from "react";
 var Airtable = require("airtable");
 var base = new Airtable({ apiKey: process.env.REACT_APP_API_KEY }).base(
   "app3Gf3GAi6tb6C0t"
@@ -33,8 +32,6 @@ base("Recipes")
     }
   );
 
-debugger;
-
 const RecipeView = () => {
   return (
     <div className="container">
@@ -44,7 +41,6 @@ const RecipeView = () => {
         <RenderRecipe
           name={recipe.Name}
           category={recipe.Category}
-          subcategory={recipe.Subcategory}
           totaltime={recipe.totalTime}
           preptime={recipe.prepTime}
           cooktime={recipe.cookTime}

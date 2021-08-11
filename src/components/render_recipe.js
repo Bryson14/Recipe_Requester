@@ -1,7 +1,6 @@
 const RenderRecipe = ({
   name,
   category,
-  subcategory,
   totaltime,
   preptime,
   cooktime,
@@ -23,7 +22,7 @@ const RenderRecipe = ({
         <h2 className="header-2">{name}</h2>
         <div className="col-lg-6 col-md-12">
           <p>
-            Category: <b>{category}</b> -- Subcategory: <b>{subcategory}</b>
+            Category: <b>{category}</b>
           </p>
           <p>
             Time: <b>{totaltime} min.</b>
