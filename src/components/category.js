@@ -1,5 +1,24 @@
 function Category({ handleChange, category }) {
-  let categories = ["Meat", "Soup", "Appetizer", "Dessert"];
+  let categories = [
+    "Breakfast",
+    "Lunch",
+    "Beverages",
+    "Appetizers",
+    "Soups",
+    "Salads",
+    "Main dishes: Beef",
+    "Main dishes: Poultry",
+    "Main dishes: Pork",
+    "Main dishes: Seafood",
+    "Main dishes: Vegetarian",
+    "Side dishes: Vegetables",
+    "Side dishes: Other",
+    "Desserts",
+    "Canning / Freezing",
+    "Breads",
+    "Holidays",
+    "Entertaining",
+  ];
 
   let itemsSelect =
     categories.length > 0 &&
@@ -23,7 +42,7 @@ function Category({ handleChange, category }) {
         <select
           onChange={handleChange("category")}
           value={category}
-          class="custom-select"
+          className="form-control"
           id="inputGroupSelect01"
         >
           <option selected>Choose...</option>
