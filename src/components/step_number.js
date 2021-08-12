@@ -1,9 +1,5 @@
 function StepNumber({ number }) {
-  return (
-    <p>
-      <u>{number}</u>
-    </p>
-  );
+  return <p className="text-muted">{number}</p>;
 }
 
 export default StepNumber;

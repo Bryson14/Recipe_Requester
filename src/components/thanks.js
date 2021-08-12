@@ -41,6 +41,7 @@ function Thanks({
         cooktime={cooktime}
         ingredients={ingredients}
         instructions={instructions}
+        recipeBook={false}
       />
     </div>
   );

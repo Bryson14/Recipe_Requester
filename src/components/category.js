@@ -1,3 +1,5 @@
+import StepNumber from "./step_number";
+
 function Category({ handleChange, category }) {
   let categories = [
     "Breakfast",
@@ -32,7 +34,16 @@ function Category({ handleChange, category }) {
 
   return (
     <div>
-      <h1 className="page-title">Category</h1>
+      <div className="container-fluid">
+        <div className="row my-2">
+          <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+            <h2>Category</h2>
+          </div>
+          <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <StepNumber number="Step 2 of 5" className="ml-4" />
+          </div>
+        </div>
+      </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect01">

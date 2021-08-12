@@ -1,6 +1,7 @@
 import { useState } from "react";
 import IngredientItem from "./ingredient_item";
 import ControlButton from "./control_button";
+import StepNumber from "./step_number";
 
 function Ingredients({ handleChange, ingredients, nextStep, prevStep }) {
   const [ingredient, setIngredient] = useState("");
@@ -32,7 +33,16 @@ function Ingredients({ handleChange, ingredients, nextStep, prevStep }) {
 
   return (
     <div>
-      <h1 className="page-title">Ingredients</h1>
+      <div className="container-fluid">
+        <div className="row my-2">
+          <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+            <h2>Ingredients</h2>
+          </div>
+          <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <StepNumber number="Step 4 of 5" className="ml-4" />
+          </div>
+        </div>
+      </div>
       <p>
         Add the amount of the ingredient as well. For example, say "3 cups of
         unbleached flour"

@@ -68,7 +68,7 @@ export class UserStepForm extends Component {
             totalTime: Number(this.state.totalTime),
             prepTime: Number(this.state.prepTime),
             cookTime: Number(this.state.cookTime),
-            Ingredients: JSON.stringify(this.state.ingredients),
+            Ingredients: JSON.stringify(this.state.ingredients.reverse()),
             Instructions: JSON.stringify(this.state.instructions),
           },
         },

@@ -35,7 +35,10 @@ base("Recipes")
 const RecipeView = () => {
   return (
     <div className="container">
-      <h1 className="m-3">Recipe Book</h1>
+      <h1 className="m-3 ">Recipe Book</h1>
+      <p className="text-muted">
+        For now, use <kbd>Cmd+f</kbd> or <kbd>Ctrl+f</kbd> to find a recipe.
+      </p>
       <hr />
       {myrecipes.map((recipe) => (
         <RenderRecipe
@@ -46,6 +49,7 @@ const RecipeView = () => {
           cooktime={recipe.cookTime}
           ingredients={recipe.Ingredients}
           instructions={recipe.Instructions}
+          recipeBook={true}
         />
       ))}
     </div>

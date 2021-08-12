@@ -8,38 +8,48 @@ function RecipeName({ handleChange, name, nextStep }) {
   }
 
   return (
-    <div>
-      <div className="vert-split-div">
-        <h3 className="span-left">What is the name of your recipe?</h3>
-        <p className="span-left">
-          Something clever like{" "}
-          <b>
-            <i>Grandma's Killer Cinnamon Orange Rolls</i>
-          </b>{" "}
-          sounds better than just{" "}
-          <b>
-            <i>Cinnamon Rolls</i>
-          </b>
-          .
-        </p>
-        <div className="span-right">
-          <span>
-            <StepNumber number="01" />
-            <input
-              type="text"
-              className="form-control"
-              value={name}
-              onChange={handleChange("name")}
-              maxLength="100"
-              onKeyDown={enterKey}
-              autoFocus
-              placeholder="Recipe Name"
-            ></input>
-          </span>
+    <>
+      <div className="container-fluid">
+        <div className="row my-2">
+          <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+            <h2>What is the name of your recipe?</h2>
+          </div>
+          <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <StepNumber number="Step 1 of 5" className="ml-4" />
+          </div>
+        </div>
+
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-sm-6">
+              <p>
+                Something clever like{" "}
+                <b>
+                  <i>Grandma's Killer Cinnamon Orange Rolls</i>
+                </b>{" "}
+                sounds better than just{" "}
+                <b>
+                  <i>Cinnamon Rolls</i>
+                </b>
+                .
+              </p>
+            </div>
+            <div className="col-sm-6">
+              <input
+                type="text"
+                className="form-control"
+                value={name}
+                onChange={handleChange("name")}
+                maxLength="100"
+                onKeyDown={enterKey}
+                autoFocus
+                placeholder="Recipe Name"
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <br />
-    </div>
+    </>
   );
 }
 

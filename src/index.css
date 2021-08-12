@@ -1,29 +1,28 @@
-
 body {
   margin: 9%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to bottom right, #44BB88, #E3F2FD);
+  background-image: linear-gradient(to bottom right, #44bb88, #e3f2fd);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 .user-form {
   background-color: white;
   border-radius: 3rem;
-  padding: 2rem;
+  padding: 1rem;
   background-position-y: -1px;
   bottom: -1px;
 }
 
 .img-vert-half {
-  max-width: 50%; 
+  max-width: 50%;
   height: auto;
 }
 
@@ -33,17 +32,16 @@ code {
 
 .span-left {
   column-span: 1;
-  text-align: left; 
-
+  text-align: left;
 }
 
 .span-right {
   column-span: 1;
-  text-align: right; 
+  text-align: right;
 }
 
 #leftHalf {
-  background: url('./images/roberto-valdivia-rcUw6b4iYe0-unsplash.jpg');
+  background: url("./images/roberto-valdivia-rcUw6b4iYe0-unsplash.jpg");
   background-repeat: no-repeat;
   width: 50%;
   position: absolute;
@@ -57,21 +55,26 @@ code {
 
 .category-select {
   height: 3rem;
-  background-color: #F1DB4B;
+  background-color: #f1db4b;
   border-radius: 2px;
   border-width: 0px;
 }
 
 .inline {
-  display: inline-block
+  display: inline-block;
 }
 
-nav ul{height:200px; width:18%;}
-nav ul{overflow:hidden; overflow-y:scroll;}
-
+nav ul {
+  height: 200px;
+  width: 18%;
+}
+nav ul {
+  overflow: hidden;
+  overflow-y: scroll;
+}
 
 .ingredient-list {
-  border:1px solid black;
+  border: 1px solid black;
 }
 
 .text-wrap {
@@ -88,7 +91,7 @@ nav ul{overflow:hidden; overflow-y:scroll;}
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,10 +124,9 @@ nav ul{overflow:hidden; overflow-y:scroll;}
   margin-left: 3rem;
 }
 
-.list-group{
+.list-group {
   max-height: 300px;
   margin-bottom: 10px;
-  overflow:scroll;
+  overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
-

@@ -1,6 +1,7 @@
 import IngredientList from "./ingredient_list";
 import { useState } from "react";
 import IngredientItem from "./ingredient_item";
+import StepNumber from "./step_number";
 
 function Instructions({ handleChange, ingredients, instructions }) {
   const [instruction, setInstruction] = useState("");
@@ -31,8 +32,15 @@ function Instructions({ handleChange, ingredients, instructions }) {
   }
 
   return (
-    <div className="container text-center">
-      <h1 className="page-title">Instructions</h1>
+    <div className="container-fluid">
+      <div className="row my-2">
+        <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+          <h2>Instructions</h2>
+        </div>
+        <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <StepNumber number="Last Step" className="ml-4" />
+        </div>
+      </div>
       <hr />
       <div className="row">
         <div className="col-sm-12 col-md-8">

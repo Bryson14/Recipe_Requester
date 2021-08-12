@@ -1,3 +1,5 @@
+import StepNumber from "./step_number";
+
 function Time({ handleChange, time, cookTime, prepTime, nextStep, name }) {
   function enterKey(e) {
     if (e.key === "Enter" && time > 0 && prepTime > 0 && cookTime > 0) {
@@ -7,7 +9,16 @@ function Time({ handleChange, time, cookTime, prepTime, nextStep, name }) {
 
   return (
     <div>
-      <h1 className="page-title">Time</h1>
+      <div className="container-fluid">
+        <div className="row my-2">
+          <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+            <h2>Time</h2>
+          </div>
+          <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <StepNumber number="Step 3 of 5" className="ml-4" />
+          </div>
+        </div>
+      </div>
       <p>
         What's the total time to make <i>{name}</i>?
       </p>
