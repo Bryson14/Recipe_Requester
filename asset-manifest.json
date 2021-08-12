@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Recipe_Requester/static/css/main.06d1cf84.chunk.css",
-    "main.js": "/Recipe_Requester/static/js/main.248bf770.chunk.js",
-    "main.js.map": "/Recipe_Requester/static/js/main.248bf770.chunk.js.map",
+    "main.css": "/Recipe_Requester/static/css/main.76f8f76c.chunk.css",
+    "main.js": "/Recipe_Requester/static/js/main.f5930652.chunk.js",
+    "main.js.map": "/Recipe_Requester/static/js/main.f5930652.chunk.js.map",
     "runtime-main.js": "/Recipe_Requester/static/js/runtime-main.dea8d932.js",
     "runtime-main.js.map": "/Recipe_Requester/static/js/runtime-main.dea8d932.js.map",
     "static/js/2.768345f2.chunk.js": "/Recipe_Requester/static/js/2.768345f2.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.6f7bffd9.chunk.js": "/Recipe_Requester/static/js/3.6f7bffd9.chunk.js",
     "static/js/3.6f7bffd9.chunk.js.map": "/Recipe_Requester/static/js/3.6f7bffd9.chunk.js.map",
     "index.html": "/Recipe_Requester/index.html",
-    "static/css/main.06d1cf84.chunk.css.map": "/Recipe_Requester/static/css/main.06d1cf84.chunk.css.map",
+    "static/css/main.76f8f76c.chunk.css.map": "/Recipe_Requester/static/css/main.76f8f76c.chunk.css.map",
     "static/js/2.768345f2.chunk.js.LICENSE.txt": "/Recipe_Requester/static/js/2.768345f2.chunk.js.LICENSE.txt",
     "static/media/index.css": "/Recipe_Requester/static/media/roberto-valdivia-rcUw6b4iYe0-unsplash.11040231.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.dea8d932.js",
     "static/js/2.768345f2.chunk.js",
-    "static/css/main.06d1cf84.chunk.css",
-    "static/js/main.248bf770.chunk.js"
+    "static/css/main.76f8f76c.chunk.css",
+    "static/js/main.f5930652.chunk.js"
   ]
 }
