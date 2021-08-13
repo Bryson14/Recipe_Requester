@@ -9,7 +9,7 @@ function Welcome({ nextStep, requester }) {
   }
 
   return (
-    <div>
+    <div className="p-4">
       <div className="vert-split-div left">
         <h3 className="span-left">Recipe Grabber</h3>
         <button onClick={nextStep} className="span-left btn btn-warning">
