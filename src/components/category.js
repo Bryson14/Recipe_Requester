@@ -20,6 +20,7 @@ function Category({ handleChange, category }) {
     "Breads",
     "Holidays",
     "Entertaining",
+    "Drinks",
   ];
 
   let itemsSelect =
